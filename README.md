@@ -7,3 +7,7 @@
 im = Image.open(infile).convert('L')
 out = im.resize((50,50),Image.ANTIALIAS)</code></pre>
 * 该方法只对训练数据进行灰度处理，训练64k个mini_batch，作为本次探索的baseline，线上F1值为0.7606992164
+### 2018.11.13
+* 利用isin()方法统计了young，middle，old三类演员在训练集中的占比：
+  * 其中young有6706个，middle有10804个，old有2396个
+* 不将图像进行灰度处理，只进行统一的resize处理——(50,50,3)，mini-batch传入CNN中进行分类，线上F1值为0.7903857746
